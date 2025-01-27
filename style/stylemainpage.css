@@ -1,0 +1,686 @@
+@font-face { font-family: Nesia; src: url('../font/NesiaSans.otf'); } 
+@font-face { font-family: Chinook; src: url('../font/Chinook-Regular.otf'); } 
+@font-face { font-family: Royce; src: url('../font/Royce-Semibold.otf'); } 
+@font-face { font-family: Alegra; src: url('../font/Alegra-Regular.ttf'); } 
+@font-face { font-family: Slenco; src: url('../font/Slenco-Blackdemo.otf');} 
+@font-face { font-family: GantariSB; src: url('../font/Gantari-SemiBold.ttf'); } 
+@font-face { font-family: GantariR; src: url('../font/Gantari-Regular.ttf'); } 
+@font-face { font-family: GantariM; src: url('../font/Gantari-Medium.ttf'); } 
+
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-moz-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-ms-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-ms-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 50%;
+}
+
+/* Fond de la barre de défilement */
+::-ms-track {
+    background-color: transparent;
+}
+
+html, body {
+    background-color: rgb(19, 19, 19);
+    font-family: 'GantariSB';
+    background-size: cover;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+/** nav bar **/
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px; 
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.nav-bar .logo {
+    user-select: none;
+    flex: 1; 
+}
+
+.nav-bar .links {
+    display: flex;
+    gap:30px;   
+}
+
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: transform 0.3s ease, color 0.5s ease;
+    font-family: 'Royce';
+    text-decoration: none; 
+}
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+.nav-bar .logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease, color 0.5s ease;
+}
+
+.nav-bar .logo img:hover {
+    transform: scale(1.2);  
+}
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Royce';
+    text-decoration: none;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-bar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance entre le texte et la ligne */
+    left: 50%; /* Ligne commence au centre */
+    width: 0%; /* Ligne initialement invisible */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%); /* Centre la ligne */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.nav-bar .links a:hover::after {
+    width: 100%; /* Étendre la ligne */
+    background-color: rgb(255, 255, 255);;
+}
+.logo {
+    position: relative; /* Permet de positionner le texte par rapport au logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Zoom du logo au survol */
+}
+
+
+
+
+/** main **/
+main {
+    color: white;
+}
+
+.presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction {
+    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
+    flex-direction: column; /* Aligne les éléments en ligne */
+    justify-content: space-between; /* Laisse un espace entre l'image et le texte */
+    align-items: center; /* Centre les éléments verticalement */
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    max-width: 1000px; /* Limite la largeur de la section */
+    margin: 0 auto; /* Centrer l'introduction */
+    transition: background-color 0.3s ease;
+}
+
+.presentation .photo{
+    display: flex;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    width: 15%;
+    height: 295px;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    padding: 30px;
+}
+
+.presentation .photo:hover{
+    background-color: rgb(31, 0, 209);
+}
+
+
+.presentation .photo img{
+    width: 260px;
+    border-radius: 15px;
+}
+
+
+.introduction h1 {
+    font-family: 'GantariM';
+    font-size: 2em;
+}
+
+.introduction p {
+    font-size: 1.1em;
+    max-width: 600px;
+}
+
+.introduction:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+/** Logos **/
+.logos {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+    width: 57%; /* Par défaut */
+    text-align: center;
+    margin-bottom: 100px;
+    max-width: 1000px;
+}
+
+.logos h2 {
+    font-size: 25px;
+}
+
+.logos:before {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0));
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+    height: 50px;
+    margin: 0 40px;
+}
+
+.logos-slide .html {
+    height: 55px;
+}
+
+
+
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+    max-width: 1000px;
+}
+
+.container h1{
+    font-family: 'GantariM';
+    font-size: 2.2em;
+}
+.container h2{
+    font-family: 'GantariM';
+    font-size: 1.1em;
+    margin-bottom: 200px;
+}
+
+.container:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    text-align: center;
+    gap: 50px;
+ 
+}
+
+
+.page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, transform 2s ease;
+    max-width: 1000px;
+}
+
+.page-container a{
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: transform 0.5s ease, color 1s ease;
+}
+
+.page-container a:hover{
+   transform: scale(1.3);
+   color: rgb(0, 217, 255);;
+}
+
+.prod{
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    
+}
+.contact{
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+.prod:hover{
+    background-color: rgb(31, 0, 209);
+    
+}
+.contact:hover{
+    background-color: rgb(31, 0, 209);
+}
+
+
+
+
+
+
+/* Taille des logos en responsive */
+.logos-slide img {
+    height: 50px;
+    margin: 0 30px; /* Ajuste la marge pour les petits écrans */
+}
+
+.logos-slide .html {
+    height: 38px; /* Ajuste la taille du logo HTML */
+}
+
+
+/* Container de logos pour éviter qu'ils ne débordent */
+.logos {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+    width: 80%; /* Ajuster la largeur pour les petits écrans */
+    text-align: center;
+    margin-bottom: 100px;
+    max-width: 1000px;
+}
+
+/* Réduire la taille des logos sur petits écrans */
+@media (max-width: 768px) {
+    .logos {
+        width: 100%; /* Les logos prennent toute la largeur de l'écran */
+    }
+
+    .logos-slide img {
+        margin: 10px; /* Réduit l'espace entre les logos */
+        height: 40px; /* Ajuste la taille des logos pour mobile */
+    }
+}
+
+/* Ajustement de la présentation de la page principale */
+@media (max-width: 768px) {
+    .presentation {
+        flex-direction: column; /* Passe en colonne sur petits écrans */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .presentation .photo {
+        width: 100%; /* Largeur complète pour l'image */
+        margin-left: 0;
+        margin-top: 20px; /* Espacement entre l'intro et l'image */
+    }
+
+    .presentation .photo img {
+        width: 80%; /* Ajuste la taille de l'image */
+    }
+
+    .presentation .introduction {
+        width: 100%;
+        padding: 20px; /* Réduit le padding pour les petits écrans */
+        margin-bottom: 20px;
+    }
+
+    .presentation h1 {
+        font-size: 1.5em;
+    }
+
+    .presentation p {
+        font-size: 1em;
+    }
+}
+
+/* Section des liens */
+.page-container {
+    display: flex;
+    flex-direction: column; /* Passer en colonne sur mobile */
+    align-items: center; /* Centrer les éléments */
+    text-align: center;
+    width: 100%; /* S'assurer que la section occupe toute la largeur */
+}
+
+.page-container .prod, .page-container .contact {
+    width: 90%; /* Occupe presque toute la largeur */
+    margin-bottom: 20px;
+}
+
+.page-container a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: transform 0.5s ease, color 1s ease;
+}
+
+.page-container a:hover {
+    transform: scale(1.3);
+    color: rgb(0, 217, 255);
+}
+
+/* Adaptation des polices pour la taille des écrans plus petits */
+@media (max-width: 480px) {
+    .introduction h1 {
+        font-size: 1.2em;
+    }
+
+    .introduction p {
+        font-size: 0.9em;
+    }
+
+    .logos-slide img {
+        height: 35px; /* Réduire encore plus pour les petits écrans */
+    }
+
+    .logos {
+        margin-bottom: 50px;
+    }
+}
+
+/* Responsive adjustments for phone */
+@media (max-width: 768px) {
+    /* Nav Bar */
+    .nav-bar {
+        flex-direction: column; /* Empile les éléments du header */
+        align-items: center; /* Centre les éléments */
+        padding: 10px;
+    }
+    
+    .nav-bar .logo {
+        flex: none; /* Le logo prend uniquement la place nécessaire */
+        margin-bottom: 10px;
+    }
+
+    .nav-bar .links {
+        display: flex;
+        flex-direction: column; /* Les liens seront empilés en colonne */
+        gap: 15px;
+    }
+
+    .nav-bar .links a {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Logos */
+    .logos {
+        width: 100%; /* Prend toute la largeur de l'écran */
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+
+    .logos-slide {
+        display: inline-block;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+        height: 40px;
+        margin: 10px;
+    }
+
+    /* Header présentation */
+    .presentation {
+        flex-direction: column; /* Empile l'image et le texte sur mobile */
+        align-items: center;
+        padding: 20px;
+    }
+
+    .presentation .photo {
+        width: 70%; /* L'image devient plus grande */
+        height: auto;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .presentation .photo img {
+        width: 100%; /* L'image prend toute la largeur disponible */
+        border-radius: 15px;
+    }
+
+    .introduction h1 {
+        font-size: 1.5em;
+    }
+
+    .introduction p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    /* Page container for production and contact links */
+    .page-container {
+        flex-direction: column; /* Empile les éléments */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .prod, .contact {
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .prod a, .contact a {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustement pour très petits écrans */
+    .presentation .photo {
+        width: 80%; /* Réduit encore la taille de l'image */
+    }
+
+    .logos-slide img {
+        height: 30px; /* Réduit la taille des logos */
+    }
+
+    .logos {
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animation des logos en continu */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Effet de transition de fade pour la page */
+.fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 9999; /* Assure que l'élément est au-dessus de tout */
+}
+
+
+

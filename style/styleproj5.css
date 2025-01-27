@@ -1,0 +1,440 @@
+@font-face { font-family: Nesia; src: url('../font/NesiaSans.otf'); } 
+@font-face { font-family: Chinook; src: url('../font/Chinook-Regular.otf'); } 
+@font-face { font-family: Royce; src: url('../font/Royce-Semibold.otf'); } 
+@font-face { font-family: Alegra; src: url('../font/Alegra-Regular.ttf'); } 
+@font-face { font-family: Slenco; src: url('../font/Slenco-Blackdemo.otf');} 
+@font-face { font-family: GantariSB; src: url('../font/Gantari-SemiBold.ttf'); } 
+@font-face { font-family: GantariR; src: url('../font/Gantari-Regular.ttf'); } 
+@font-face { font-family: GantariM; src: url('../font/Gantari-Medium.ttf'); } 
+
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-moz-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-ms-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-ms-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 50%;
+}
+
+/* Fond de la barre de défilement */
+::-ms-track {
+    background-color: transparent;
+}
+
+html, body {
+    background-color: rgb(19, 19, 19);
+    font-family: 'GantariSB';
+    background-size: cover;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+/** nav bar **/
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px; 
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.nav-bar .logo {
+    user-select: none;
+    flex: 1; 
+}
+
+.nav-bar .links {
+    display: flex;
+    gap:30px;   
+}
+
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: transform 0.3s ease, color 0.5s ease;
+    font-family: 'Royce';
+    text-decoration: none; 
+}
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+.nav-bar .logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease, color 0.5s ease;
+}
+
+.nav-bar .logo img:hover {
+    transform: scale(1.2);  
+}
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Royce';
+    text-decoration: none;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-bar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance entre le texte et la ligne */
+    left: 50%; /* Ligne commence au centre */
+    width: 0%; /* Ligne initialement invisible */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%); /* Centre la ligne */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.nav-bar .links a:hover::after {
+    width: 100%; /* Étendre la ligne */
+    background-color: rgb(255, 255, 255);;
+}
+.logo {
+    position: relative; /* Permet de positionner le texte par rapport au logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Zoom du logo au survol */
+}
+
+.max-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: start;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    width: 40%;
+    margin: 0 100px;
+    transition: background-color 0.3s ease;
+}
+
+.container a {
+    color: white;
+    text-decoration: underline;
+    font-size: 1.4em;
+    transition: color 0.5s ease;
+}
+
+.container a:hover {
+    color: #00c3ff;
+}
+
+.container:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+.comp .box-comp {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.comp .box-comp img {
+    width: 60px;
+}
+
+.screenshot {
+    margin-left: 100px;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 50px;
+    transition: background-color 0.3s ease;
+    height: 680px;
+}
+
+.screenshot:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+.logo-share {
+    height: 670px;
+}
+
+/* Styles pour la section production-section */
+.production-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.production-box {
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.production-box img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.production-box:hover {
+    transform: scale(1.05);
+    background-color: rgb(31, 0, 209);
+
+}
+
+
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    padding-top: 60px;
+}
+
+/* Contenu de l'image dans la modale */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* Bouton pour fermer la modale */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    font-size: 18px;
+    padding: 10px;
+}
+
+
+/* Media queries pour mobile et tablettes */
+@media (max-width: 1024px) {
+    /* Ajustements pour tablettes ou petits écrans */
+    .nav-bar {
+        padding: 10px;
+    }
+
+    .container {
+        width: 70%; /* Réduire la taille de .container */
+        margin: 20px;
+    }
+
+    .max-container {
+        flex-direction: column; /* Passer à une disposition verticale */
+    }
+
+    .screenshot {
+        margin-left: 0; /* Retirer la marge gauche */
+        height: auto; /* Laisser la hauteur s'ajuster */
+        padding: 20px;
+    }
+
+    .logo-share {
+        width: 100%; /* Réduire la taille de l'image */
+        height: auto;
+    }
+
+    .production-section {
+        flex-direction: column; /* Afficher les éléments de manière verticale */
+    }
+
+    .production-box {
+        width: 80%; /* Réduire la taille des éléments */
+        margin-bottom: 20px;
+    }
+}
+
+/* Media queries pour mobile */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column; /* Positionner les éléments de la nav sur une colonne */
+        align-items: center; /* Centrer les éléments */
+    }
+
+    .nav-bar .links {
+        flex-direction: column; /* Placer les liens de manière verticale */
+        gap: 10px; /* Réduire l'écart entre les liens */
+    }
+
+    .container {
+        width: 90%; /* Augmenter la largeur de .container pour plus de fluidité */
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .screenshot {
+        margin-left: 0; /* Retirer la marge gauche */
+        height: auto; /* Adapter la hauteur */
+        padding: 15px;
+    }
+
+    .logo-share {
+        width: 100%; /* L'image occupe toute la largeur */
+        height: auto;
+    }
+
+    .production-section {
+        flex-direction: column; /* Mettre les productions en colonne */
+        align-items: center;
+    }
+
+    .production-box {
+        width: 90%; /* Réduire la taille des boxes */
+        margin-bottom: 15px;
+    }
+
+    .circle {
+        top: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Responsive adjustments for phone */
+@media (max-width: 768px) {
+    /* Nav Bar */
+    .nav-bar {
+        flex-direction: column; /* Empile les éléments du header */
+        align-items: center; /* Centre les éléments */
+        padding: 10px;
+    }
+    
+    .nav-bar .logo {
+        flex: none; /* Le logo prend uniquement la place nécessaire */
+        margin-bottom: 10px;
+    }
+
+    .nav-bar .links {
+        display: flex;
+        flex-direction: column; /* Les liens seront empilés en colonne */
+        gap: 15px;
+    }
+
+    .nav-bar .links a {
+        font-size: 20px;
+        text-align: center;
+    }}
+

@@ -1,0 +1,490 @@
+@font-face { font-family: Nesia; src: url('../font/NesiaSans.otf'); } 
+@font-face { font-family: Chinook; src: url('../font/Chinook-Regular.otf'); } 
+@font-face { font-family: Royce; src: url('../font/Royce-Semibold.otf'); } 
+@font-face { font-family: Alegra; src: url('../font/Alegra-Regular.ttf'); } 
+@font-face { font-family: Slenco; src: url('../font/Slenco-Blackdemo.otf');} 
+@font-face { font-family: GantariSB; src: url('../font/Gantari-SemiBold.ttf'); } 
+@font-face { font-family: GantariR; src: url('../font/Gantari-Regular.ttf'); } 
+@font-face { font-family: GantariM; src: url('../font/Gantari-Medium.ttf'); } 
+
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-moz-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-ms-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-ms-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 50%;
+}
+
+/* Fond de la barre de défilement */
+::-ms-track {
+    background-color: transparent;
+}
+
+html, body {
+    background-color: rgb(19, 19, 19);
+    font-family: 'GantariSB';
+    background-size: cover;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+/** nav bar **/
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px; 
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.nav-bar .logo {
+    user-select: none;
+    flex: 1; 
+}
+
+.nav-bar .links {
+    display: flex;
+    gap:30px;   
+}
+
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: transform 0.3s ease, color 0.5s ease;
+    font-family: 'Royce';
+    text-decoration: none; 
+}
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+.nav-bar .logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease, color 0.5s ease;
+}
+
+.nav-bar .logo img:hover {
+    transform: scale(1.2);  
+}
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Royce';
+    text-decoration: none;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-bar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance entre le texte et la ligne */
+    left: 50%; /* Ligne commence au centre */
+    width: 0%; /* Ligne initialement invisible */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%); /* Centre la ligne */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.nav-bar .links a:hover::after {
+    width: 100%; /* Étendre la ligne */
+    background-color: rgb(255, 255, 255);;
+}
+.logo {
+    position: relative; /* Permet de positionner le texte par rapport au logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Zoom du logo au survol */
+}
+
+.max-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: start;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    width: 40%;
+    margin: 0 100px;
+    transition: background-color 0.3s ease;
+}
+
+.container a {
+    color: white;
+    text-decoration: underline;
+    font-size: 1.4em;
+    transition: color 0.5s ease;
+}
+
+.container a:hover {
+    color: #00c3ff;
+}
+
+.container:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+.comp .box-comp {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.comp .box-comp img {
+    width: 80px;
+}
+
+/* Screenshot */
+.screenshot {
+    margin-left: 20px;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 50px;
+    transition: background-color 0.3s ease;
+    height: 30%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Empêche le débordement de l'image */
+}
+
+.screenshot img {
+    width: 100%; /* L'image prend toute la largeur de la boîte */
+    height: auto; /* L'image garde son ratio */
+    object-fit: cover; /* Permet de recadrer l'image si nécessaire pour qu'elle couvre entièrement la boîte sans déformation */
+}
+
+.screenshot:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+.cov-accidentologie {
+    height: 295px;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    padding-top: 60px;
+}
+
+/* Contenu de l'image dans la modale */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* Bouton pour fermer la modale */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    font-size: 18px;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Styles pour la section production-section */
+.production-section {
+    display: flex;
+    flex-wrap: wrap; /* Permet d'aller à la ligne après 2 images */
+    gap: 20px; /* Espace entre les images */
+    justify-content: center; /* Centre les images dans la section */
+    margin-top: 40px;
+}
+
+.production-box {
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(50% - 20px); /* Chaque image prend 50% moins l'espace du gap */
+    max-width: 500px; /* Limite la largeur maximale pour éviter que ce soit trop grand */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.production-box img {
+    width: 100%; /* L'image occupe toute la largeur de son conteneur */
+    height: auto; /* Conserve le ratio d'aspect de l'image */
+    object-fit: cover; /* Ajuste l'image pour remplir l'espace tout en restant esthétique */
+    border-radius: 10px;
+}
+
+
+.production-box:hover {
+    transform: scale(1.05);
+    background-color: rgb(31, 0, 209);
+
+}
+
+
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .production-box {
+        width: 100%;
+    }
+}
+
+/* Mobilité et petite tablette */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar .links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .container {
+        width: 80%;
+        margin: 20px 0;
+        padding: 20px;
+    }
+
+    .max-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .screenshot {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .comp .box-comp {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .comp .box-comp img {
+        width: 50px;
+    }
+
+    .production-box {
+        width: 100%;
+        max-width: none;
+    }
+
+    .production-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .production-section {
+        justify-content: center;
+    }
+}
+
+/* Petit téléphone */
+@media (max-width: 480px) {
+    .nav-bar .links a {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .container a {
+        font-size: 1.2em;
+    }
+
+    .production-box {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .production-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .max-container {
+        padding: 0 10px;
+    }
+
+    .screenshot {
+        width: 90%;
+    }
+}
+
+/* Petit téléphone */
+@media (max-width: 480px) {
+    .screenshot {
+        width: 90%; /* Réduit la taille de la boîte de l'image sur les petits écrans */
+        margin-top: 20px;
+    }
+
+    .screenshot img {
+        width: 100%; /* L'image s'ajuste à la largeur de la boîte */
+        height: auto;
+        object-fit: contain; /* Assure que l'image est complètement visible sans être coupée */
+    }
+}
+
+/* Responsive adjustments for phone */
+@media (max-width: 768px) {
+    /* Nav Bar */
+    .nav-bar {
+        flex-direction: column; /* Empile les éléments du header */
+        align-items: center; /* Centre les éléments */
+        padding: 10px;
+    }
+    
+    .nav-bar .logo {
+        flex: none; /* Le logo prend uniquement la place nécessaire */
+        margin-bottom: 10px;
+    }
+
+    .nav-bar .links {
+        display: flex;
+        flex-direction: column; /* Les liens seront empilés en colonne */
+        gap: 15px;
+    }
+
+    .nav-bar .links a {
+        font-size: 20px;
+        text-align: center;
+    }}

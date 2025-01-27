@@ -1,0 +1,416 @@
+@font-face { font-family: Nesia; src: url('../font/NesiaSans.otf'); } 
+@font-face { font-family: Chinook; src: url('../font/Chinook-Regular.otf'); } 
+@font-face { font-family: Royce; src: url('../font/Royce-Semibold.otf'); } 
+@font-face { font-family: Alegra; src: url('../font/Alegra-Regular.ttf'); } 
+@font-face { font-family: Slenco; src: url('../font/Slenco-Blackdemo.otf');} 
+@font-face { font-family: GantariSB; src: url('../font/Gantari-SemiBold.ttf'); } 
+@font-face { font-family: GantariR; src: url('../font/Gantari-Regular.ttf'); } 
+@font-face { font-family: GantariM; src: url('../font/Gantari-Medium.ttf'); } 
+
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-moz-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-ms-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-ms-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 50%;
+}
+
+/* Fond de la barre de défilement */
+::-ms-track {
+    background-color: transparent;
+}
+
+html, body {
+    background-color: rgb(19, 19, 19);
+    font-family: 'GantariSB';
+    background-size: cover;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+/** nav bar **/
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px; 
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.nav-bar .logo {
+    user-select: none;
+    flex: 1; 
+}
+
+.nav-bar .links {
+    display: flex;
+    gap:30px;   
+}
+
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: transform 0.3s ease, color 0.5s ease;
+    font-family: 'Royce';
+    text-decoration: none; 
+}
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+.nav-bar .logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease, color 0.5s ease;
+}
+
+.nav-bar .logo img:hover {
+    transform: scale(1.2);  
+}
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Royce';
+    text-decoration: none;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-bar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance entre le texte et la ligne */
+    left: 50%; /* Ligne commence au centre */
+    width: 0%; /* Ligne initialement invisible */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%); /* Centre la ligne */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.nav-bar .links a:hover::after {
+    width: 100%; /* Étendre la ligne */
+    background-color: rgb(255, 255, 255);;
+}
+.logo {
+    position: relative; /* Permet de positionner le texte par rapport au logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Zoom du logo au survol */
+}
+
+
+
+/* Container */
+.container {
+    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
+    flex-direction: column; /* Aligne les éléments en ligne */
+    justify-content: space-between; /* Laisse un espace entre l'image et le texte */
+    align-items: center; /* Centre les éléments verticalement */
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+    overflow: hidden; /* Évite que le texte dépasse */
+}
+
+.container h1 {
+    font-family: 'GantariM';
+    font-size: 2.2em;
+    margin-bottom: 10px; /* Réduit l'espacement sous le titre */
+}
+
+.container h2 {
+    font-family: 'GantariM';
+    font-size: 1.1em;
+    margin-bottom: 40px; /* Réduit l'espacement sous le sous-titre */
+}
+
+.container:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+.box-container {
+    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
+    flex-direction: row; /* Aligne les éléments en ligne */
+    justify-content: space-between; /* Laisse un espace entre l'image et le texte */
+    align-items: center; /* Centre les éléments verticalement */
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    text-align: center;
+    gap: 40px;
+ 
+}
+
+
+.box1 img{
+    width: 300px;
+    height: 150px;
+    transition: transform 0.8s ease;
+}
+
+.box2 img{
+    width: 300px;
+    height: 150px;
+    transition: transform 0.8s ease;
+}
+
+.box4 img{
+    width: 300px;
+    height: 150px;
+    transition: transform 0.8s ease;
+}
+
+.box5 img{
+    width: 300px;
+    height: 148px;
+    transition: transform 0.8s ease;
+}
+
+
+
+
+
+.box1 img:hover{
+    transform: scale(1.1);
+}
+
+.box2 img:hover{
+    transform: scale(1.1);
+}
+
+.box4 img:hover{
+    transform: scale(1.1);
+}
+
+.box5 img:hover{
+    transform: scale(1.1);
+}
+
+
+/* Rendre le site réactif */
+@media (max-width: 768px) {
+    /* Nav Bar */
+    .nav-bar {
+        flex-direction: column; /* Empile les éléments du header */
+        align-items: center; /* Centre les éléments */
+        padding: 10px;
+    }
+    
+    .nav-bar .logo {
+        flex: none; /* Le logo prend uniquement la place nécessaire */
+        margin-bottom: 10px;
+    }
+
+    .nav-bar .links {
+        display: flex;
+        flex-direction: column; /* Les liens seront empilés en colonne */
+        gap: 15px;
+        align-items: center; /* Centre les liens */
+    }
+
+    .nav-bar .links a {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .nav-bar .logo img {
+        width: 80px; /* Réduit la taille du logo sur mobile */
+        height: 80px;
+    }
+
+    /* Container */
+    .container {
+        width: 90%; /* Réduit la largeur du container */
+        padding: 20px;
+        margin: 0 auto;
+        background-color: rgb(38, 0, 255);
+        border-radius: 15px;
+    }
+
+    .container h1 {
+        font-size: 2em;
+    }
+
+    .container h2 {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+    }
+
+    .box-container {
+        flex-direction: column; /* Empile les boîtes */
+        gap: 20px;
+    }
+
+    .box1 img, .box2 img, .box4 img, .box5 img {
+        width: 100%; /* Les images prennent toute la largeur disponible */
+        max-width: 300px; /* Limite la taille des images */
+        height: auto; /* Laisse les images garder leurs proportions */
+    }
+
+    /* Détails sur hover */
+    .box1 img:hover, .box2 img:hover, .box4 img:hover, .box5 img:hover {
+        transform: scale(1.05); /* Réduit l'effet de zoom pour les mobiles */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Réduire encore pour très petits écrans */
+    .nav-bar .logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .container h1 {
+        font-size: 1.8em;
+    }
+
+    .container h2 {
+        font-size: 1.1em;
+    }
+
+    .box-container {
+        gap: 15px;
+    }
+
+    .box1 img, .box2 img, .box4 img, .box5 img {
+        max-width: 250px; /* Réduit la taille des images */
+    }
+}
+
+
+
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 9999; /* Assure que l'élément est au-dessus de tout */
+  }
+
+  .fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* Réduire les tailles de texte et ajuster l'espacement pour la version mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Réduit la largeur du container */
+        padding: 20px;
+        margin: 0 auto;
+        background-color: rgb(38, 0, 255);
+        border-radius: 15px;
+        overflow: hidden; /* Maintient l'intégrité du texte */
+    }
+
+    .container h1 {
+        font-size: 2em;
+    }
+
+    .container h2 {
+        font-size: 1.2em;
+        margin-bottom: 20px; /* Réduit encore l'espacement sous le titre */
+    }
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Permet aux éléments de se déplacer sous l'autre si l'espace est insuffisant */
+}
+
+.box1 img, .box2 img, .box4 img, .box5 img {
+    width: 100%;
+    max-width: 300px;
+    height: auto; /* Laisse les images garder leurs proportions */
+    word-wrap: break-word; /* Forcer les mots à se couper si nécessaire */
+}
+
+/* Effet hover des images */
+.box1 img:hover, .box2 img:hover, .box4 img:hover, .box5 img:hover {
+    transform: scale(1.05);
+}

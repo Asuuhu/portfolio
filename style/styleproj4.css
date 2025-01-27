@@ -1,0 +1,290 @@
+@font-face { font-family: Nesia; src: url('../font/NesiaSans.otf'); } 
+@font-face { font-family: Chinook; src: url('../font/Chinook-Regular.otf'); } 
+@font-face { font-family: Royce; src: url('../font/Royce-Semibold.otf'); } 
+@font-face { font-family: Alegra; src: url('../font/Alegra-Regular.ttf'); } 
+@font-face { font-family: Slenco; src: url('../font/Slenco-Blackdemo.otf');} 
+@font-face { font-family: GantariSB; src: url('../font/Gantari-SemiBold.ttf'); } 
+@font-face { font-family: GantariR; src: url('../font/Gantari-Regular.ttf'); } 
+@font-face { font-family: GantariM; src: url('../font/Gantari-Medium.ttf'); } 
+
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-moz-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-ms-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-ms-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 50%;
+}
+
+/* Fond de la barre de défilement */
+::-ms-track {
+    background-color: transparent;
+}
+
+html, body {
+    background-color: rgb(19, 19, 19);
+    font-family: 'GantariSB';
+    background-size: cover;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+/** nav bar **/
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px; 
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.nav-bar .logo {
+    user-select: none;
+    flex: 1; 
+}
+
+.nav-bar .links {
+    display: flex;
+    gap:30px;   
+}
+
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: transform 0.3s ease, color 0.5s ease;
+    font-family: 'Royce';
+    text-decoration: none; 
+}
+.nav-bar .links a:hover {
+    color: rgb(38, 0, 255);
+    transform: scale(1.2);
+}
+.nav-bar .logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease, color 0.5s ease;
+}
+
+.nav-bar .logo img:hover {
+    transform: scale(1.2);  
+}
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Royce';
+    text-decoration: none;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-bar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance entre le texte et la ligne */
+    left: 50%; /* Ligne commence au centre */
+    width: 0%; /* Ligne initialement invisible */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: rgb(38, 0, 255);
+    transform: translateX(-50%); /* Centre la ligne */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .links a:hover {
+    color: rgb(38, 0, 255);
+
+}
+
+.nav-bar .links a:hover::after {
+    width: 100%; /* Étendre la ligne */
+    background-color: rgb(38, 0, 255);;
+}
+.logo {
+    position: relative; /* Permet de positionner le texte par rapport au logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Zoom du logo au survol */
+}
+
+/* Container principal */
+.max-container {
+    display: flex;
+    flex-direction: row; /* Gardé en ligne pour les grands écrans */
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container interne */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    width: 40%; /* Largeur initiale pour grand écran */
+    height: auto;
+    margin: 0 100px;
+    transition: background-color 0.3s ease;
+}
+
+.container a {
+    color: white;
+    text-decoration: underline;
+    font-size: 1.4em;
+    transition: color 0.5s ease;
+}
+
+.container a:hover {
+    color: #00c3ff;
+}
+
+.container:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+/* Vidéo */
+.video {
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    padding: 50px;
+    width: 40%; /* Largeur initiale pour grand écran */
+    margin: 0 100px;
+    transition: background-color 0.3s ease;
+}
+
+.video iframe {
+    width: 100%;
+    height: 400px; /* Taille vidéo par défaut */
+}
+
+.video:hover {
+    background-color: rgb(31, 0, 209);
+}
+
+/* Media queries pour mobile - ne s'appliquent que pour les petits écrans */
+@media (max-width: 768px) {
+    /* Barre de navigation */
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-bar .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    /* Container principal et vidéo */
+    .max-container {
+        flex-direction: column; /* Colonne sur mobile */
+        align-items: center;
+    }
+
+    .container {
+        width: 90%; /* Plus petit pour les petits écrans */
+        margin: 10px 0;
+    }
+
+    .video {
+        width: 90%; /* Adapte la largeur de la vidéo sur mobile */
+        margin: 10px 0;
+    }
+
+    .video iframe {
+        height: 250px; /* Ajuste la hauteur de la vidéo sur petit écran */
+    }
+
+    /* Cercle flottant réduit */
+    .circle {
+        top: 10px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+.circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

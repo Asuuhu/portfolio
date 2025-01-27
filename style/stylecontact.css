@@ -1,0 +1,462 @@
+@font-face { font-family: Nesia; src: url('../font/NesiaSans.otf'); } 
+@font-face { font-family: Chinook; src: url('../font/Chinook-Regular.otf'); } 
+@font-face { font-family: Royce; src: url('../font/Royce-Semibold.otf'); } 
+@font-face { font-family: Alegra; src: url('../font/Alegra-Regular.ttf'); } 
+@font-face { font-family: Slenco; src: url('../font/Slenco-Blackdemo.otf');} 
+@font-face { font-family: GantariSB; src: url('../font/Gantari-SemiBold.ttf'); } 
+@font-face { font-family: GantariR; src: url('../font/Gantari-Regular.ttf'); } 
+@font-face { font-family: GantariM; src: url('../font/Gantari-Medium.ttf'); } 
+
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(38, 0, 255);
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-moz-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-moz-scrollbar-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 5px;
+}
+
+/* Fond de la barre de défilement */
+::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Largeur de la scrollbar */
+::-ms-scrollbar {
+    width: 5px;
+}
+
+/* Barre de défilement elle-même */
+::-ms-thumb {
+    background-color: #252525;
+    border-radius: 20px;
+    height: 50%;
+}
+
+/* Fond de la barre de défilement */
+::-ms-track {
+    background-color: transparent;
+}
+
+html, body {
+    background-color: rgb(19, 19, 19);
+    font-family: 'GantariSB';
+    background-size: cover;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+/** nav bar **/
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px; 
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.nav-bar .logo {
+    user-select: none;
+    flex: 1; 
+}
+
+.nav-bar .links {
+    display: flex;
+    gap:30px;   
+}
+
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: transform 0.3s ease, color 0.5s ease;
+    font-family: 'Royce';
+    text-decoration: none; 
+}
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+.nav-bar .logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease, color 0.5s ease;
+}
+
+.nav-bar .logo img:hover {
+    transform: scale(1.2);  
+}
+.nav-bar .links a {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Royce';
+    text-decoration: none;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    display: inline-block;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.nav-bar .links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Distance entre le texte et la ligne */
+    left: 50%; /* Ligne commence au centre */
+    width: 0%; /* Ligne initialement invisible */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%); /* Centre la ligne */
+    transition: width 0.3s ease;
+}
+
+.nav-bar .links a:hover {
+    color: rgb(255, 255, 255);
+
+}
+
+.nav-bar .links a:hover::after {
+    width: 100%; /* Étendre la ligne */
+    background-color: rgb(255, 255, 255);;
+}
+.logo {
+    position: relative; /* Permet de positionner le texte par rapport au logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.8s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.2); /* Zoom du logo au survol */
+}
+
+
+.container{
+    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
+    flex-direction: column; /* Aligne les éléments en ligne */
+    align-items: center ; /* Centre les éléments verticalement */
+    background-color: rgb(38, 0, 255);
+    border-radius: 15px;
+    color: white;
+    padding: 50px;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+    max-width: 1000px;
+}
+
+.container:hover{
+    background-color: rgb(31, 0, 209);
+}
+
+
+.container h2{
+    font-size: 2.2em;
+    transition: transform 0.5s ease;
+}
+
+.container h2:hover{
+    transform: scale(1.1); /* Zoom du texte au survol */
+}
+
+.container p{
+    transition: transform 0.5s ease;
+    font-size: 1.1em;
+}
+
+.container p:hover{
+    transform: scale(1.1); /* Zoom du texte au survol */
+}
+   
+
+.box-container{
+    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
+    flex-direction: column;
+    justify-content: center ; /* Laisse un espace entre l'image et le texte */
+    height: auto;
+    transition: background-color 0.3s ease;
+    font-size: 1.3em;
+}
+
+.box-container a{
+    font-size: 0.85em;
+}
+.box1{
+    font-size: 1.15em;
+    display: flex;
+    gap: 50px;
+}
+
+.box1 a{
+   color: white;
+   text-decoration: none;
+}
+
+.box1 img{
+    width: 25px;
+}
+
+.box2 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: px;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+
+.cv{
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+
+
+.box2 a {
+    color: rgb(255, 255, 255);
+    transition: color 0.5s ease;
+    font-family: 'GantariSB';
+    text-decoration: none;
+    font-size: 0.70em;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.box2 a:hover {
+    color: rgb(0, 217, 255); /* Change la couleur au survol */
+}
+
+
+.socials-container{
+    display: flex;
+  }
+  .socials-container a{
+    background-color: white;
+    padding: 0.1em;
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    display: flex; /* Utiliser flexbox */
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .socials-container a svg{
+    height: 32px;
+  }
+  .socials-container a::before{
+    content: attr(data-social);
+    position: absolute;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-30px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms cubic-bezier(.42,0,.44,1.68);
+  }
+  .socials-container a:hover{
+    background-color: var(--accent-color);
+    fill: white;
+  }
+  .socials-container a::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--accent-color);
+    transform: translateY(0) rotate(25deg);
+    opacity: 0;
+    transition: 200ms cubic-bezier(.42,0,.44,1.68);
+  }
+  .socials-container a:hover::before{
+    transform: translateY(-65px) rotate(0);
+    opacity: 1;
+  }
+  .socials-container a:hover::after{
+    transform: translateY(-42px) rotate(0);
+    opacity: 1;
+  }
+
+/* Rendre le site réactif */
+@media (max-width: 768px) {
+    /* Nav Bar */
+    .nav-bar {
+        flex-direction: column; /* Empile les éléments du header */
+        align-items: center; /* Centre les éléments */
+        padding: 10px;
+    }
+    
+    .nav-bar .logo {
+        flex: none; /* Le logo prend uniquement la place nécessaire */
+        margin-bottom: 10px;
+    }
+
+    .nav-bar .links {
+        display: flex;
+        flex-direction: column; /* Les liens seront empilés en colonne */
+        gap: 15px;
+        align-items: center; /* Centre les liens */
+    }
+
+    .nav-bar .links a {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .nav-bar .logo img {
+        width: 80px; /* Réduit la taille du logo sur mobile */
+        height: 80px;
+    }
+
+    /* Container */
+    .container {
+        width: 90%; /* Réduit la largeur du container */
+        padding: 20px;
+        margin: 0 auto;
+        background-color: rgb(38, 0, 255);
+        border-radius: 15px;
+    }
+
+    .container h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .container p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
+    .box-container {
+        flex-direction: column; /* Empile les boîtes */
+        gap: 20px;
+        width: 100%; /* S'assurer que la boîte prend toute la largeur */
+        align-items: center;
+    }
+
+    .box1, .box2 {
+        width: 100%; /* Les boîtes prennent toute la largeur */
+        text-align: center;
+    }
+
+    .box1 img, .box2 img {
+        width: 50px; /* Ajuste la taille des images */
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* Détails sur hover */
+    .box1 img:hover, .box2 img:hover {
+        transform: scale(1.05); /* Réduit l'effet de zoom pour les mobiles */
+    }
+
+    /* Socials */
+    .socials-container {
+        flex-direction: column; /* Empile les icônes des réseaux sociaux */
+        gap: 15px;
+    }
+
+    .socials-container a {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Réduire encore pour très petits écrans */
+    .nav-bar .logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .container h2 {
+        font-size: 1.8em;
+    }
+
+    .container p {
+        font-size: 1em;
+    }
+
+    .box-container {
+        gap: 15px;
+    }
+
+    .box1 img, .box2 img {
+        width: 40px; /* Réduit la taille des images */
+    }
+
+    .box2 a {
+        font-size: 0.9em; /* Réduit la taille des liens */
+    }
+
+    .socials-container a {
+        height: 45px;
+        width: 45px;
+        font-size: 18px;
+    }
+}
+
+  .circle {
+    --circle-size: 30px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 2px solid white;
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    z-index: 9999; /* Assure que l'élément est au-dessus de tout */
+  }
+
+  .fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

@@ -135,8 +135,11 @@ a {
     transition: background-color 0.3s ease;
 }
 
-.container a {
-    color: white;
+.container a{
+    background-color: rgb(2, 65, 255);
+    padding: 10px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
     text-decoration: underline;
     font-size: 1.4em;
     transition: color 0.5s ease;
@@ -172,13 +175,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Empêche l'image de dépasser */
+    overflow: hidden;
 }
 
 .screenshot img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Assure que l'image couvre toute la boîte */
+    object-fit: cover;
 }
 
 .cov-after {
@@ -199,7 +202,7 @@ a {
     padding-top: 60px;
 }
 
-/* Contenu de l'image dans la modale */
+
 .modal-content {
     margin: auto;
     display: block;
@@ -207,7 +210,7 @@ a {
     max-width: 900px;
 }
 
-/* Bouton pour fermer la modale */
+
 .close {
     position: absolute;
     top: 15px;
@@ -232,7 +235,6 @@ a {
     padding: 10px;
 }
 
-/* Styles pour la section production-section */
 .production-section {
     display: flex;
     flex-wrap: wrap;
@@ -322,7 +324,7 @@ a {
 
 @media (max-width: 480px) {
     .screenshot img {
-        object-fit: contain; /* Pour éviter que l'image soit coupée */
+        object-fit: contain;
     }
 
     .container {
@@ -339,19 +341,19 @@ a {
 @media (max-width: 768px) {
     /* Nav Bar */
     .nav-bar {
-        flex-direction: column; /* Empile les éléments du header */
-        align-items: center; /* Centre les éléments */
+        flex-direction: column; 
+        align-items: center; 
         padding: 10px;
     }
     
     .nav-bar .logo {
-        flex: none; /* Le logo prend uniquement la place nécessaire */
+        flex: none; 
         margin-bottom: 10px;
     }
 
     .nav-bar .links {
         display: flex;
-        flex-direction: column; /* Les liens seront empilés en colonne */
+        flex-direction: column; 
         gap: 15px;
     }
 
@@ -359,3 +361,8 @@ a {
         font-size: 20px;
         text-align: center;
     }}
+    @media (max-width: 1024px) { /* Cache sur tablette et mobile */
+        .circle {
+            display: none;
+        }
+    }

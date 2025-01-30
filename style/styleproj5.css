@@ -176,12 +176,16 @@ a {
     transition: background-color 0.3s ease;
 }
 
-.container a {
-    color: white;
+.container a{
+    background-color: rgb(2, 65, 255);
+    padding: 10px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
     text-decoration: underline;
     font-size: 1.4em;
     transition: color 0.5s ease;
 }
+
 
 .container a:hover {
     color: #00c3ff;
@@ -437,4 +441,8 @@ a {
         font-size: 20px;
         text-align: center;
     }}
-
+    @media (max-width: 1024px) { /* Cache sur tablette et mobile */
+        .circle {
+            display: none;
+        }
+    }

@@ -394,11 +394,11 @@ main {
 /* Taille des logos en responsive */
 .logos-slide img {
     height: 50px;
-    margin: 0 30px; /* Ajuste la marge pour les petits écrans */
+    margin: 0 30px; 
 }
 
 .logos-slide .html {
-    height: 38px; /* Ajuste la taille du logo HTML */
+    height: 38px; 
 }
 
 
@@ -412,7 +412,7 @@ main {
     white-space: nowrap;
     position: relative;
     user-select: none;
-    width: 80%; /* Ajuster la largeur pour les petits écrans */
+    width: 80%; 
     text-align: center;
     margin-bottom: 100px;
     max-width: 1000px;
@@ -421,36 +421,36 @@ main {
 /* Réduire la taille des logos sur petits écrans */
 @media (max-width: 768px) {
     .logos {
-        width: 100%; /* Les logos prennent toute la largeur de l'écran */
+        width: 100%; 
     }
 
     .logos-slide img {
-        margin: 10px; /* Réduit l'espace entre les logos */
-        height: 40px; /* Ajuste la taille des logos pour mobile */
+        margin: 10px; 
+        height: 40px; 
     }
 }
 
 /* Ajustement de la présentation de la page principale */
 @media (max-width: 768px) {
     .presentation {
-        flex-direction: column; /* Passe en colonne sur petits écrans */
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
     }
 
     .presentation .photo {
-        width: 100%; /* Largeur complète pour l'image */
+        width: 100%; 
         margin-left: 0;
-        margin-top: 20px; /* Espacement entre l'intro et l'image */
+        margin-top: 20px; /
     }
 
     .presentation .photo img {
-        width: 80%; /* Ajuste la taille de l'image */
+        width: 80%; 
     }
 
     .presentation .introduction {
         width: 100%;
-        padding: 20px; /* Réduit le padding pour les petits écrans */
+        padding: 20px; 
         margin-bottom: 20px;
     }
 
@@ -466,14 +466,14 @@ main {
 /* Section des liens */
 .page-container {
     display: flex;
-    flex-direction: column; /* Passer en colonne sur mobile */
-    align-items: center; /* Centrer les éléments */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
-    width: 100%; /* S'assurer que la section occupe toute la largeur */
+    width: 100%; 
 }
 
 .page-container .prod, .page-container .contact {
-    width: 90%; /* Occupe presque toute la largeur */
+    width: 90%;
     margin-bottom: 20px;
 }
 
@@ -500,7 +500,7 @@ main {
     }
 
     .logos-slide img {
-        height: 35px; /* Réduire encore plus pour les petits écrans */
+        height: 35px; 
     }
 
     .logos {
@@ -512,19 +512,19 @@ main {
 @media (max-width: 768px) {
     /* Nav Bar */
     .nav-bar {
-        flex-direction: column; /* Empile les éléments du header */
-        align-items: center; /* Centre les éléments */
+        flex-direction: column; 
+        align-items: center; 
         padding: 10px;
     }
     
     .nav-bar .logo {
-        flex: none; /* Le logo prend uniquement la place nécessaire */
+        flex: none;
         margin-bottom: 10px;
     }
 
     .nav-bar .links {
         display: flex;
-        flex-direction: column; /* Les liens seront empilés en colonne */
+        flex-direction: column; 
         gap: 15px;
     }
 
@@ -535,7 +535,7 @@ main {
 
     /* Logos */
     .logos {
-        width: 100%; /* Prend toute la largeur de l'écran */
+        width: 100%;
         margin-top: 30px;
         padding: 0 10px;
     }
@@ -554,20 +554,20 @@ main {
 
     /* Header présentation */
     .presentation {
-        flex-direction: column; /* Empile l'image et le texte sur mobile */
+        flex-direction: column; 
         align-items: center;
         padding: 20px;
     }
 
     .presentation .photo {
-        width: 70%; /* L'image devient plus grande */
+        width: 70%; 
         height: auto;
         margin-left: 0;
         margin-top: 20px;
     }
 
     .presentation .photo img {
-        width: 100%; /* L'image prend toute la largeur disponible */
+        width: 100%; 
         border-radius: 15px;
     }
 
@@ -582,7 +582,7 @@ main {
 
     /* Page container for production and contact links */
     .page-container {
-        flex-direction: column; /* Empile les éléments */
+        flex-direction: column; 
         gap: 20px;
         text-align: center;
     }
@@ -601,11 +601,11 @@ main {
 @media (max-width: 480px) {
     /* Ajustement pour très petits écrans */
     .presentation .photo {
-        width: 80%; /* Réduit encore la taille de l'image */
+        width: 80%; 
     }
 
     .logos-slide img {
-        height: 30px; /* Réduit la taille des logos */
+        height: 30px; 
     }
 
     .logos {
@@ -679,8 +679,13 @@ main {
     top: calc(var(--circle-size) / 2 * -1);
     left: calc(var(--circle-size) / 2 * -1);
     pointer-events: none;
-    z-index: 9999; /* Assure que l'élément est au-dessus de tout */
+    z-index: 9999; 
 }
 
 
 
+@media (max-width: 1024px) { /* Cache sur tablette et mobile */
+    .circle {
+        display: none;
+    }
+}

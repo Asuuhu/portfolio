@@ -115,7 +115,7 @@ a {
     font-size: 25px;
     font-family: 'Royce';
     text-decoration: none;
-    position: relative; /* Nécessaire pour positionner le ::after */
+    position: relative; 
     display: inline-block;
     transition: color 0.5s ease, transform 0.5s ease;
 }
@@ -123,12 +123,12 @@ a {
 .nav-bar .links a::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Distance entre le texte et la ligne */
-    left: 50%; /* Ligne commence au centre */
-    width: 0%; /* Ligne initialement invisible */
-    height: 2px; /* Épaisseur de la ligne */
+    bottom: -5px; 
+    left: 50%; 
+    width: 0%; 
+    height: 2px; 
     background-color: rgb(255, 255, 255);
-    transform: translateX(-50%); /* Centre la ligne */
+    transform: translateX(-50%); 
     transition: width 0.3s ease;
 }
 
@@ -138,11 +138,11 @@ a {
 }
 
 .nav-bar .links a:hover::after {
-    width: 100%; /* Étendre la ligne */
+    width: 100%; 
     background-color: rgb(255, 255, 255);;
 }
 .logo {
-    position: relative; /* Permet de positionner le texte par rapport au logo */
+    position: relative; 
     display: flex;
     align-items: center;
 }
@@ -154,38 +154,40 @@ a {
 }
 
 .logo img:hover {
-    transform: scale(1.2); /* Zoom du logo au survol */
+    transform: scale(1.2); 
 }
 
 
 
 /* Container */
 .container {
-    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
-    flex-direction: column; /* Aligne les éléments en ligne */
-    justify-content: space-between; /* Laisse un espace entre l'image et le texte */
-    align-items: center; /* Centre les éléments verticalement */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
     background-color: rgb(38, 0, 255);
     border-radius: 15px;
     color: white;
     padding: 50px;
-    width: 60%;
+    width: 40%;
     height: auto;
     margin: 0 auto;
     transition: background-color 0.3s ease;
-    overflow: hidden; /* Évite que le texte dépasse */
+    overflow: hidden; 
 }
 
 .container h1 {
+    text-align: center;
     font-family: 'GantariM';
     font-size: 2.2em;
-    margin-bottom: 10px; /* Réduit l'espacement sous le titre */
+    margin-bottom: 10px; 
 }
 
 .container h2 {
+    text-align: center;
     font-family: 'GantariM';
     font-size: 1.1em;
-    margin-bottom: 40px; /* Réduit l'espacement sous le sous-titre */
+    margin-bottom: 40px; 
 }
 
 .container:hover {
@@ -193,82 +195,97 @@ a {
 }
 
 .box-container {
-    display: flex; /* Utilise flexbox pour aligner horizontalement l'image et le texte */
-    flex-direction: row; /* Aligne les éléments en ligne */
-    justify-content: space-between; /* Laisse un espace entre l'image et le texte */
-    align-items: center; /* Centre les éléments verticalement */
-    background-color: rgba(255, 255, 255, 0);
-    color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    gap: 20px; 
+}
+
+.box-container > div {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    gap: 40px;
- 
 }
 
 
-.box1 img{
+
+
+.box1 img {
+    width: 500px;
+    height: 250px;
+    transition: transform 0.8s ease;
+    border: 3px solid white;
+    border-radius: 15px;
+}
+
+.box2 img {
+    width: 400px;
+    height: 200px;
+    transition: transform 0.8s ease;
+    border: 3px solid white;
+    border-radius: 15px;
+}
+
+.box4 img {
+    width: 400px;
+    height: 230px;
+    transition: transform 0.8s ease;
+    border: 3px solid white;
+    border-radius: 15px;
+}
+
+.box5 img {
+    width: 400px;
+    height: 200px;
+    transition: transform 0.8s ease;
+    border: 3px solid white;
+    border-radius: 15px;
+}
+
+.box6 img {
     width: 300px;
     height: 150px;
     transition: transform 0.8s ease;
+    border: 3px solid white;
+    border-radius: 15px;
 }
 
-.box2 img{
-    width: 300px;
-    height: 150px;
-    transition: transform 0.8s ease;
-}
-
-.box4 img{
-    width: 300px;
-    height: 150px;
-    transition: transform 0.8s ease;
-}
-
-.box5 img{
-    width: 300px;
-    height: 148px;
-    transition: transform 0.8s ease;
-}
-
-
-
-
-
-.box1 img:hover{
+/* Effet zoom au survol */
+.box1 img:hover,
+.box2 img:hover,
+.box4 img:hover,
+.box5 img:hover,
+.box6 img:hover {
     transform: scale(1.1);
 }
 
-.box2 img:hover{
-    transform: scale(1.1);
-}
-
-.box4 img:hover{
-    transform: scale(1.1);
-}
-
-.box5 img:hover{
-    transform: scale(1.1);
-}
 
 
 /* Rendre le site réactif */
 @media (max-width: 768px) {
     /* Nav Bar */
     .nav-bar {
-        flex-direction: column; /* Empile les éléments du header */
-        align-items: center; /* Centre les éléments */
+        flex-direction: column; 
+        align-items: center;
         padding: 10px;
     }
     
     .nav-bar .logo {
-        flex: none; /* Le logo prend uniquement la place nécessaire */
+        flex: none; 
         margin-bottom: 10px;
     }
 
     .nav-bar .links {
         display: flex;
-        flex-direction: column; /* Les liens seront empilés en colonne */
+        flex-direction: column; 
         gap: 15px;
-        align-items: center; /* Centre les liens */
+        align-items: center; 
     }
 
     .nav-bar .links a {
@@ -277,13 +294,13 @@ a {
     }
 
     .nav-bar .logo img {
-        width: 80px; /* Réduit la taille du logo sur mobile */
+        width: 80px; 
         height: 80px;
     }
 
     /* Container */
     .container {
-        width: 90%; /* Réduit la largeur du container */
+        width: 90%; 
         padding: 20px;
         margin: 0 auto;
         background-color: rgb(38, 0, 255);
@@ -300,19 +317,19 @@ a {
     }
 
     .box-container {
-        flex-direction: column; /* Empile les boîtes */
+        flex-direction: column; 
         gap: 20px;
     }
 
     .box1 img, .box2 img, .box4 img, .box5 img {
-        width: 100%; /* Les images prennent toute la largeur disponible */
-        max-width: 300px; /* Limite la taille des images */
-        height: auto; /* Laisse les images garder leurs proportions */
+        width: 100%; 
+        max-width: 300px; 
+        height: auto; 
     }
 
     /* Détails sur hover */
     .box1 img:hover, .box2 img:hover, .box4 img:hover, .box5 img:hover {
-        transform: scale(1.05); /* Réduit l'effet de zoom pour les mobiles */
+        transform: scale(1.05); 
     }
 }
 
@@ -336,7 +353,7 @@ a {
     }
 
     .box1 img, .box2 img, .box4 img, .box5 img {
-        max-width: 250px; /* Réduit la taille des images */
+        max-width: 250px; 
     }
 }
 
@@ -353,7 +370,7 @@ a {
     top: calc(var(--circle-size) / 2 * -1);
     left: calc(var(--circle-size) / 2 * -1);
     pointer-events: none;
-    z-index: 9999; /* Assure que l'élément est au-dessus de tout */
+    z-index: 9999; 
   }
 
   .fade-in {
@@ -376,12 +393,12 @@ a {
 /* Réduire les tailles de texte et ajuster l'espacement pour la version mobile */
 @media (max-width: 768px) {
     .container {
-        width: 90%; /* Réduit la largeur du container */
+        width: 90%; 
         padding: 20px;
         margin: 0 auto;
         background-color: rgb(38, 0, 255);
         border-radius: 15px;
-        overflow: hidden; /* Maintient l'intégrité du texte */
+        overflow: hidden; 
     }
 
     .container h1 {
@@ -390,7 +407,7 @@ a {
 
     .container h2 {
         font-size: 1.2em;
-        margin-bottom: 20px; /* Réduit encore l'espacement sous le titre */
+        margin-bottom: 20px; 
     }
 }
 
@@ -400,17 +417,23 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    flex-wrap: wrap; /* Permet aux éléments de se déplacer sous l'autre si l'espace est insuffisant */
+    flex-wrap: wrap; 
 }
 
 .box1 img, .box2 img, .box4 img, .box5 img {
     width: 100%;
     max-width: 300px;
-    height: auto; /* Laisse les images garder leurs proportions */
-    word-wrap: break-word; /* Forcer les mots à se couper si nécessaire */
+    height: auto; 
+    word-wrap: break-word; 
 }
 
 /* Effet hover des images */
 .box1 img:hover, .box2 img:hover, .box4 img:hover, .box5 img:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 1024px) { /* Cache sur tablette et mobile */
+    .circle {
+        display: none;
+    }
 }

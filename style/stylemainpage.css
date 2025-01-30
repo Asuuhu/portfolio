@@ -169,6 +169,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .introduction {
@@ -180,7 +181,8 @@ main {
     border-radius: 15px;
     color: white;
     padding: 50px;
-    max-width: 1000px; /* Limite la largeur de la section */
+    width: 90%; /* Par défaut */
+    max-width: 1200px; /* Limite la largeur de la section */
     margin: 0 auto; /* Centrer l'introduction */
     transition: background-color 0.3s ease;
 }

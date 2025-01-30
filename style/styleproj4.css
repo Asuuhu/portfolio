@@ -194,9 +194,7 @@ a {
     color: #00c3ff;
 }
 
-.container:hover {
-    background-color: rgb(31, 0, 209);
-}
+
 
 /* Vidéo */
 .video {
@@ -213,9 +211,7 @@ a {
     height: 400px; 
 }
 
-.video:hover {
-    background-color: rgb(31, 0, 209);
-}
+
 
 /* Media queries pour mobile - ne s'appliquent que pour les petits écrans */
 @media (max-width: 768px) {

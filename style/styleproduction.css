@@ -190,9 +190,7 @@ a {
     margin-bottom: 40px; 
 }
 
-.container:hover {
-    background-color: rgb(31, 0, 209);
-}
+
 
 .box-container {
     display: flex;

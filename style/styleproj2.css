@@ -190,9 +190,6 @@ a {
     color: #00c3ff;
 }
 
-.container:hover {
-    background-color: rgb(31, 0, 209);
-}
 
 .comp .box-comp {
     margin-top: 30px;
@@ -226,9 +223,7 @@ a {
     object-fit: cover;
 }
 
-.screenshot:hover {
-    background-color: rgb(31, 0, 209);
-}
+
 
 .cov-accidentologie {
     height: 295px;
